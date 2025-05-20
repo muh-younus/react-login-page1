@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 
 function Login(){
 
+  const [color, setColor] = useState("Sign Up");
+
 
   return(
     <>
@@ -14,7 +16,7 @@ function Login(){
         <div className="line"></div>  
           
       </div>
-        <div className="input">
+        <div className="inputs">
           
           <div className="inner-box">
            
@@ -27,18 +29,34 @@ function Login(){
           <div className="inner-box">
 
             <i class="fa-solid fa-envelope icon"></i>
-            <input type="text" placeholder="Email"></input>
+            <input type="email" placeholder="Email"></input>
           
           </div>
           
           <div className="inner-box">
 
             <i class="fa-solid fa-envelope icon"></i>
-            <input type="text" placeholder="Password"></input>
+            <input type="password" placeholder="Password"></input>
           
           </div>
+
+          
           
     </div>
+
+      <div className="btn-section">
+
+        <p className="paragraph">Lost Password? <a>Click Here</a></p>
+
+        <div className="btn">
+
+          <button className={color === "Sign Up"?"gray": "login-btn"}>Login</button>
+          
+          <button className={color === "login"? "gray":"login-btn"}>Sign Up</button>
+        
+        </div>
+      </div>
+      
 
     </div>
 
