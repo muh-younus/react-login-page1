@@ -12,19 +12,21 @@ function Login(){
 
       <div className='container'>
         
-          <h1 className="text">Sign Up</h1>
+          <h1 className="text">{color}</h1>
         <div className="line"></div>  
           
       </div>
         <div className="inputs">
-          
+
+          {color==="login"?<div></div>: 
           <div className="inner-box">
-           
+
             <i class="fa-solid fa-user icon"></i>
             <input type="text" placeholder="Name"></input>
-              
-          
-          </div>
+
+
+          </div>}
+         
           
           <div className="inner-box">
 
@@ -46,13 +48,22 @@ function Login(){
 
       <div className="btn-section">
 
-        <p className="paragraph">Lost Password? <a>Click Here</a></p>
+        {color === "Sign Up"? <div></div>:<p className="paragraph">Lost Password? <a>Click Here</a></p>}
+
+        
 
         <div className="btn">
 
-          <button className={color === "Sign Up"?"gray": "login-btn"}>Login</button>
+          <button className={color === "Sign Up"?"gray": "login-btn"} onClick={()=>{
+            setColor("login")
+          }}>Login</button>
           
-          <button className={color === "login"? "gray":"login-btn"}>Sign Up</button>
+          <button className={color === "login"? "gray":"login-btn"} onClick={
+            () =>{
+
+              setColor("Sign Up")
+            }
+          }>Sign Up</button>
         
         </div>
       </div>
